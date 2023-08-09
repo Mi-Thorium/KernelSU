@@ -3,9 +3,11 @@
 #include "linux/nsproxy.h"
 #if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 10, 0)
 #include "linux/sched/task.h"
-#include "linux/uaccess.h"
 #else
 #include "linux/sched.h"
+#endif
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4, 9, 0)
+#include "linux/uaccess.h"
 #endif
 #include "klog.h" // IWYU pragma: keep
 
