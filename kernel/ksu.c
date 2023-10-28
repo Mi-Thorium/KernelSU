@@ -53,7 +53,7 @@ int __init kernelsu_init(void)
 
 	ksu_uid_observer_init();
 
-#ifdef CONFIG_KPROBES
+#if defined(CONFIG_KPROBES) && !defined(CONFIG_KSU_STATIC_HOOKS)
 	ksu_enable_sucompat();
 	ksu_enable_ksud();
 #else
